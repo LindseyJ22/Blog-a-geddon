@@ -1,2 +1,8 @@
 <h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+
+<%= form_with  model: @post do |f| %>
+	<%= f.text_field :title, placeholder: 'title'  %>
+	<%= f.text_area :content, placeholder: 'content' %>
+	<input type="hidden" name="user_id" value="18">
+	<%= f.submit  %>
+<% end -%>
