@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SecondRails</title>
+    <title>Blog-A-Geddon</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,15 +9,22 @@
   </head>
 
   <body>
-    <%= link_to "All Users", users_path %>
-    <%= link_to "All Posts", posts_path %>
-    <% if user_signed_in? %>
-    <%= link_to "New Post", new_post_path %>
-    <%= link_to "Log Out", logout_path, method: :delete %>
-    <% else %>
-    <%= link_to "Create Account", new_user_path %>
-    <%= link_to "Login", new_session_path %>
-    <% end %>
+  	<nav class="navbar navbar-dark bg-dark">
+      <% if user_signed_in? %>
+        <%= link_to "Home", posts_path %>
+        <%= link_to "Edit Profile", edit_user_path(current_user) %>
+        <a href="/profile">Profile</a>
+        <%= link_to "New Post", new_post_path %>
+        <a href="/find_user">Find User</a>
+        <a href="/users">Browse Users</a>
+        <%= link_to "Log Out", logout_path, method: :delete %>
+        <%= link_to "Delete Account", current_user, method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_session_path %>
+        <%= link_to "Create Account", new_user_path %>
+      <% end %>
+    </nav>
+    <div class="logo"><%= image_tag "BLOG-A-GEDDON.gif", class: "logo_image" %></div>
     <%= yield %>
   </body>
 </html>

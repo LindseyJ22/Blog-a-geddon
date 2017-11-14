@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @user = current_user
   end
 
   def new
@@ -15,13 +16,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    p params
     @user = current_user
     @post = @user.posts.create(post_params)
     redirect_to @post
   end
 
   def show
+    @posts = Post.all
+    @user = current_user
     @post = Post.find(params[:id])
   end
 

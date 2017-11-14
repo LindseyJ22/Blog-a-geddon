@@ -1,8 +1,13 @@
 <h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
 <%= form_with  model: @post do |f| %>
-	<%= f.text_field :title, placeholder: 'title'  %>
-	<%= f.text_area :content, placeholder: 'content' %>
-	<input type="hidden" name="user_id" value="18">
-	<%= f.submit  %>
+	<div class="new_post_container">
+		<div class="new_post_form_wrapper">
+			<div class="form-group new_post_content">
+			  	<%= f.text_area :content, placeholder: 
+			  	'What dos thou predict?',maxlength:150, class: "form-control " %>
+			<input type="hidden" name="user_id" value="<%=current_user.id  %>">
+			<%= f.submit class: "btn btn-primary post_submit" %>
+			</div>
+		</div>
+	</div>
 <% end -%>

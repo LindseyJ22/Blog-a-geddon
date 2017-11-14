@@ -1,11 +1,32 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-<% @posts.each do |post| %>
+<body id="post_index_body">
+	<div class="post_wrapper">
+		<% @posts.all.reverse.each do |post| %>
+			<div class="row align_posts">
+			  <div class="col-md offset-md-4 post_container">
+			  	<div class="post_content">
+			  		<%= post.content %><br/>
+		  		<small>
+		  			Posted by
+			  		<%= post.user.user_name %>
+						<%= post.created_at.strftime("on %m/%d/%Y") %> 
+						<%= post.created_at.strftime("at %I:%M%p") %>
+					</small>
 
-	<div class="post_container">
-		<p>Subject: <%= post.title %></p>
-		<p><%= post.content %></p>
-		<%= link_to " Show", post %> 
-		<%= link_to "Edit Post", edit_post_path(post) %>
-		<%= link_to "Destroy", post, method: :delete%></div>
-<% end %>
+					<div class="comment_count">
+						<%= link_to "Comments:#{post.comments.count}", post_path(post) %>
+					</div>
+			  	<div>
+			  		<% if post.user.id == current_user.id %>
+						<%= link_to "Edit Post", edit_post_path(post)  %>
+						<%= link_to "Delete", post, method: :delete%>
+						<%= link_to "Comments", post_path(post)%>
+						<button class="submit_edit">Update</button>
+					<% end %>	</div>
+			  	</div>
+				</div>  
+			</div>
+		<% end %>
+	</div>
+</body>
+
+

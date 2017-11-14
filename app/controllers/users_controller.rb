@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 # GET localhost:3000/users/new
   def new
     @user = User.new
-    @new_sentence = 'This is a new sentence yall'
   end
 
 # handles form submission and makes the new user
@@ -20,7 +19,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = 'Account successfully created'
-    redirect_to @user
+      session[:user_id] = @user.id
+      redirect_to @user
     else
       flash[:alert] = 'Your account did not get created'
       redirect_to new_user_path
@@ -31,7 +31,6 @@ class UsersController < ApplicationController
 #GET localhost:3000/users/:id
   def show
     @user = User.find(params[:id]) #find the user by the id that's sent in
-    @show_off = 'I am showing you things'
   end
 
 # show the form for editing the user
@@ -55,15 +54,15 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    session[:user_id] = nil
     redirect_to users_path
-    @destroy_things = 'I will destroy you all muhahahahahahah'
   end
 
   private
 
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, 
+    params.require(:user).permit(:first_name, :last_name, :user_name, 
     :email, :password)
   end
 end
