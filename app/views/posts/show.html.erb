@@ -28,18 +28,18 @@
 							<%= f.hidden_field :post_id, value: @post.id %>
 							<%= f.submit class: "btn btn-primary post_submit" %>
 						</div>
-			<% end -%>
-			<% @post.comments.each do |comment| %>
-				<div id="comment_content">
-					<%= comment.content %>
-					<small>
-		  			Posted by
-			  		<%= comment.user.user_name %>
-						<%= commment.created_at.strftime("on %m/%d/%Y") %> 
-						<%= comment.created_at.strftime("at %I:%M%p") %>
-					</small>
-				</div>
-			<% end %>
+				<% end -%>
+				<% @post.comments.all.reverse.each do |comment| %>
+					<div id="comment_content">
+						<%= comment.content %>
+						<small>
+			  			Posted by
+				  		<%= comment.user.user_name %>
+							<%= comment.created_at.strftime("on %m/%d/%Y") %> 
+							<%= comment.created_at.strftime("at %I:%M%p") %>
+						</small>
+					</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
-</div>

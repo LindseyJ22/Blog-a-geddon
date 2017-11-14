@@ -62,9 +62,11 @@
 .new_post_form_wrapper{
   width: 800px;
   margin: 10px auto 0 auto;
-  background: gray;
   height: 400px;
   overflow: scroll;
+  background: image-url('apocalypse.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .new_post_content{
@@ -83,7 +85,8 @@
 
 .post_submit{
   position: relative;
-  left: 557px
+  left: 557px;
+  top: 10px;
 }
 
 .new_post{
