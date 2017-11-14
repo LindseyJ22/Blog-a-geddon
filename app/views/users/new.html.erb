@@ -1,12 +1,8 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-<!-- <form action="/users" method="POST"></form> this is the old way -->
-<%= form_with  model: @user do |f| %>
-<%= f.label :first_name, "First Name" %>
-	<%= f.text_field :first_name  %>
-	<%= f.text_field :last_name, placeholder: 'Last Name' %>
-	<%= f.text_field :user_name, placeholder: 'User Name' %>
-	<%= f.text_field :email, placeholder: 'Email' %>
-	<%= f.password_field :password, placeholder: 'password' %>
-	<%= f.submit  %>
-<% end -%>
+<body id="new_user_body">
+	<div class="form-group new_user_form">
+		<div id="new_user_form_wrapper">
+			<h3 id="create_user_text">Welcome to BLOG-A-GEDDON, please create an account.</h3>
+			<%= render 'new_user_form' %>
+		</div>
+	</div>
+</body>

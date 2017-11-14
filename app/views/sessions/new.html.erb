@@ -1,10 +1,10 @@
-<h1>Sessions#new</h1>
-<% if flash[:alert] %>
-<p><%= flash[:alert] %></p>
-<% end %>
-<p>Find me in app/views/sessions/new.html.erb</p>
-<%= form_with url:sessions_path, scope: 'login' do |f| %>
-	<%= f.email_field :email, placeholder: 'Email' %>
-	<%= f.password_field :password, placeholder: 'Password' %>
-	<%= f.submit "Log In" %>
-<% end %>
+<body id="session_new_body">
+	<% if flash[:alert] %>
+	<p><%= flash[:alert] %></p>
+	<% end %>
+	<div class="form-group"><%= form_with url:sessions_path, scope: 'login' do |f| %>
+			<%= f.email_field :email, placeholder: 'Email', class: "form-control form_margin" %>
+			<%= f.password_field :password, placeholder: 'Password', class: "form-control form_margin" %>
+			<%= f.submit "Log In", class: "btn btn-primary form_margin" %>
+		<% end %></div>
+</body>

@@ -1,0 +1,12 @@
+<%= form_with  model: @post do |f| %>
+	<div class="new_post_container">
+		<div class="new_post_form_wrapper">
+			<div class="form-group new_post_content">
+			  	<%= f.text_area :content, placeholder: 
+			  	'What dos thou predict?',maxlength:150, class: "form-control " %>
+			<input type="hidden" name="user_id" value="<%=current_user.id  %>">
+			<%= f.submit class: "btn btn-primary post_submit" %>
+			</div>
+		</div>
+	</div>
+<% end -%>

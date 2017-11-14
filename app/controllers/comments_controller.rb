@@ -26,13 +26,16 @@ class CommentsController < ApplicationController
   end
 
   def update
+    @comment = Comment.find(params[:id])
     @comment.update(comment_params)
-    redirect_to @post
+    redirect_to @comment.post
   end
 
   def destroy
-     @comment.destroy
-    redirect_to posts_path
+    respond_to do |format| #we are expecting a certain call
+      @comment = Comment.find(params[:id]).destroy
+      format.js
+    end
   end
 
   private 

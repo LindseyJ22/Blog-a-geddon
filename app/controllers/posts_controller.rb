@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate, only: [:new, :create, :edit, :update, :destroty]
   
-  def set_post
-    @post = Post.find(params[:id])
-  end
+  # def set_post
+  #   @post = Post.find(params[:id])
+  # end
 
   def index
     @posts = Post.all
@@ -25,6 +25,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @user = current_user
     @post = Post.find(params[:id])
+    # @comment = Comment.find(params[:id])
   end
 
   def edit
@@ -37,8 +38,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path
+    respond_to do |format| #we are expecting a certain call
+      @post = Post.find(params[:id]).destroy
+      format.js
+      format.html {redirect_to posts_path}
+    # @post.destroy
+    # redirect_to posts_path
+    end
   end
 
   private 

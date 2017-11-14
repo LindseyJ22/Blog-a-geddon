@@ -54,6 +54,12 @@
 	border-radius: 50px
 }
 
+#posts_show_body{
+  background: image-url('apocalypse.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .align_posts{
 	width: 825px;
 	margin: 0 auto 0 auto;
@@ -67,6 +73,7 @@
   background: image-url('apocalypse.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
 }
 
 .new_post_content{
@@ -100,4 +107,10 @@
   background: white;
   border-radius: 10px;
   padding: 10px;
+}
+
+#new_post_body{
+  background: image-url('apocalypse.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

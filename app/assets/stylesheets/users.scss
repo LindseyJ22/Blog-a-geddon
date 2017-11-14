@@ -1,3 +1,63 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user_info{
+  width: 300px;
+	margin: 10px auto 10px auto;
+	background: #35505c;
+	color: white;
+	font-weight: bolder;
+	font-family: fantasy;
+	text-align: center;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#users_show_body{
+	background: image-url('apocalypse.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.new_user_form{
+  margin: 10px auto 10px auto;
+  padding: 40px;
+  border-radius: 50%;
+  width: 800px;
+  height: 800px;
+  background: rgb(125,126,125); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,1) 55%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 55%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 55%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}
+
+#new_user_form_wrapper{
+  position: relative;
+  top: 111px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#create_user_text{
+	position: relative;
+  font-family: fantasy;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+}
+
+#new_user_body{
+	background: rgb(125,126,125); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,1) 53%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 53%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 53%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
+}
+
+#users_show_body{
+	background: image-url('apocalypse.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,7 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>the selected user has an id of <%= @user.id %> and a name of <%= @user.first_name %> <%= @user.last_name %></p>
-
+<body id="users_show_body">
+	<div class="user_info">
+		<p><%= @user.first_name %> <%= @user.last_name %></p>
+		<p><%= @user.user_name %></p>
+		<p><%= @user.email %></p>	
+	</div>
 	<div class="post_wrapper">
 		<% @user.posts.all.reverse.each do |post| %>
 			<div class="row align_posts">
@@ -14,7 +16,7 @@
 						<%= post.created_at.strftime("on %m/%d/%Y") %> 
 						<%= post.created_at.strftime("at %I:%M%p") %>
 					</small>
-
+	
 					<div class="comment_count">
 						<%= link_to "Comments:#{post.comments.count}", post_path(post) %>
 					</div>
@@ -22,7 +24,6 @@
 			  		<% if post.user.id == current_user.id %>
 						<%= link_to "Edit Post", edit_post_path(post)  %>
 						<%= link_to "Delete", post, method: :delete%>
-						<%= link_to "Comments", post_path(post)%>
 						<button class="submit_edit">Update</button>
 					<% end %>	</div>
 			  	</div>
@@ -30,3 +31,4 @@
 			</div>
 		<% end %>
 	</div>
+</body>

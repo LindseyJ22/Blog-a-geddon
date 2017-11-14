@@ -1,0 +1,15 @@
+<% @post.comments.all.reverse.each do |comment| %>
+	<div id="comment_content">
+		<%= comment.content %><br/>
+		<small>
+			Posted by
+  		<%= comment.user.user_name %>
+			<%= comment.created_at.strftime("on %m/%d/%Y") %> 
+			<%= comment.created_at.strftime("at %I:%M%p") %>
+		</small><br/>
+		<% if comment.user.id == current_user.id%>
+			<%= link_to "Delete", comment, method: :delete, remote: true, class: 'destroy_comment'%>
+			<%= link_to "Edit", edit_comment_path(comment)  %>
+		<% end %>
+	</div>
+<% end %>
