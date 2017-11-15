@@ -1,0 +1,9 @@
+<body id="post_index_body">
+	<div class="post_wrapper">
+		<% @posts.all.reverse.each do |post| %>
+			<%= render post %>
+		<% end %>
+	</div>
+</body>
+
+

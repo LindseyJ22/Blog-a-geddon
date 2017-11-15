@@ -1,0 +1,13 @@
+<body class="users_body">
+	<div class="black_circle_form">
+		<div class="users_wrapper">
+			<h1 class="welcome_text">Select Thy Victim.</h1>
+				<% @users.each do |user| %>
+					<div class="users_text">
+						<%= link_to "#{user.user_name}", user, class: 'user_text' %> 
+					</div>
+				<% end %>
+			</div>
+		</div>
+<body>
+	

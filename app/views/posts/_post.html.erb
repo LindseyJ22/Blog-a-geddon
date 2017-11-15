@@ -1,0 +1,23 @@
+<div class="row align_posts post_delete">
+  <div class="col-md offset-md-4 post_container">
+  	<div class="post_content">
+  		<%= post.content %><br/>
+		<small>
+			Posted by
+  		<%= post.user.user_name %>
+			<%= post.created_at.strftime("on %m/%d/%Y") %> 
+			<%= post.created_at.strftime("at %I:%M%p") %>
+		</small>
+		<div class="comment_count">
+			<%= link_to "Comments:#{post.comments.count}", post_path(post) %>
+		</div>
+  	<div>
+  		<% if post.user.id == current_user.id %>
+			<%= link_to "Edit Post", edit_post_path(post)  %>
+			<%= link_to "Delete", post, method: :delete, remote: true, class: 'destroy_post'%>
+			<%= link_to "Comments", post_path(post)%>
+			<button class="submit_edit">Update</button>
+		<% end %>	</div>
+  	</div>
+	</div>  
+</div>

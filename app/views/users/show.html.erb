@@ -1,0 +1,34 @@
+<body class="users_body">
+	<div class="user_info">
+		<p><%= @user.first_name %> <%= @user.last_name %></p>
+		<p><%= @user.user_name %></p>
+		<p><%= @user.email %></p>	
+	</div>
+	<div class="post_wrapper">
+		<% @user.posts.all.reverse.each do |post| %>
+			<div class="row align_posts">
+			  <div class="col-md offset-md-4 post_container">
+			  	<div class="post_content">
+			  		<%= post.content %><br/>
+		  		<small>
+		  			Posted by
+			  		<%= post.user.user_name %>
+						<%= post.created_at.strftime("on %m/%d/%Y") %> 
+						<%= post.created_at.strftime("at %I:%M%p") %>
+					</small>
+	
+					<div class="comment_count">
+						<%= link_to "Comments:#{post.comments.count}", post_path(post) %>
+					</div>
+			  	<div>
+			  		<% if post.user.id == current_user.id %>
+						<%= link_to "Edit Post", edit_post_path(post)  %>
+						<%= link_to "Delete", post, method: :delete%>
+						<button class="submit_edit">Update</button>
+					<% end %>	</div>
+			  	</div>
+				</div>  
+			</div>
+		<% end %>
+	</div>
+</body>
