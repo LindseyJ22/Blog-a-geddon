@@ -20,20 +20,5 @@
 //= require_tree .
 $(function(){
 
-	$('.edit_post_button').on('click', function(){
-		let this_post = $(this).parent(".post_container")
-		this_post.find('.post_content').attr('readonly', false).focus();
-		this_post.find('.submit_edit').show();
-		// let title = $('.post_title')[0].textContent;
-		// alert(title);
-		// let content = $('.post_content')[0].textConent;
-		// alert(content);
-  });
-
-  $('.submit_edit').on('click', function(){
-  	debugger;
-
-  	$('.submit_edit').hide();
-  });
-
 });
+  
