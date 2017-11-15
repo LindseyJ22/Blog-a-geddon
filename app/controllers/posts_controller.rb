@@ -33,6 +33,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to @post
   end

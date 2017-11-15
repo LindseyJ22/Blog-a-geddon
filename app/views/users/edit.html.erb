@@ -1,10 +1,8 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-<%= form_with  model: @user do |f| %>
-<%= f.label :first_name, "First Name" %>
-	<%= f.text_field :first_name  %>
-	<%= f.text_field :last_name, placeholder: 'Last Name' %>
-	<%= f.text_field :email, placeholder: 'Email' %>
-	<%= f.password_field :password, placeholder: 'password' %>
-	<%= f.submit  %>
-<% end -%>
+<body class="flame_body">
+	<div class="form-group black_circle_form">
+		<div class="center_wrapper">
+			<h3 class="welcome_text">Wipe clean thy past self.</h3>
+			<%= render 'new_user_form' %>
+		</div>
+	</div>
+</body>

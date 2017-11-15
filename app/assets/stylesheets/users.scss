@@ -19,7 +19,7 @@
   background-size: cover;
 }
 
-.new_user_form{
+.black_circle_form{
   margin: 10px auto 10px auto;
   padding: 40px;
   border-radius: 50%;
@@ -32,7 +32,7 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 ); /* IE6-9 */
 }
 
-#new_user_form_wrapper{
+.center_wrapper{
   position: relative;
   top: 111px;
   width: 600px;
@@ -40,7 +40,7 @@
   margin-right: auto;
 }
 
-#create_user_text{
+.welcome_text{
 	position: relative;
   font-family: fantasy;
   font-weight: bolder;
@@ -48,7 +48,7 @@
   text-align: center;
 }
 
-#new_user_body{
+.gradient_black_body{
 	background: rgb(125,126,125); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(125,126,125,1) 0%, rgba(14,14,14,1) 53%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(125,126,125,1) 0%,rgba(14,14,14,1) 53%); /* Chrome10-25,Safari5.1-6 */
@@ -60,4 +60,28 @@
 	background: image-url('apocalypse.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.users_body{
+	background: image-url('apocalypse.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.flame_body{
+	background: image-url('flames.gif');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.users_wrapper{
+  text-align: center;
+  font-size: 30px;
+  font-family: fantasy;
+  font-weight: bolder;
+  margin-top: 100px;
+}
+
+.user_text{
+	color: white;
 }

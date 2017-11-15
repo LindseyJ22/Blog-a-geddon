@@ -1,13 +1,13 @@
-<h1>Users#index</h1>
-<body id="users_body">
-	<div id="user_wrapper">
-		<div id="users_container">
+<body class="users_body">
+	<div class="black_circle_form">
+		<div class="users_wrapper">
+			<h1 class="welcome_text">Select Thy Victim.</h1>
 				<% @users.each do |user| %>
-					<div>
-						<%= link_to "#{user.user_name}", user %> 
+					<div class="users_text">
+						<%= link_to "#{user.user_name}", user, class: 'user_text' %> 
 					</div>
 				<% end %>
 			</div>
 		</div>
 <body>
-
+	
