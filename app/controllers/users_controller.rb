@@ -45,8 +45,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    @update_things = 'I am updating some things here'
     redirect_to @user
+    params[:user].delete(:password) if params[:user][:password].blank?
   end
 
 # destroys the user
