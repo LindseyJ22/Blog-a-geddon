@@ -24,5 +24,5 @@ production:
   <<: *default
   adapter: postgresql
   database: blog_production
-  password: <%= ENV["BLOG_PASSWORD"] %>
-  username: blog
+  password: Pickle22%
+  username: lindseyjohsnon
