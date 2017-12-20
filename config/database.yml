@@ -22,7 +22,6 @@ test:
 
 production:
   <<: *default
-  adapter: postgresql
   database: blog_production
   password: Pickle22%
   username: lindseyjohsnon

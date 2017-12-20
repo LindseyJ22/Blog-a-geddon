@@ -4,13 +4,13 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'pg', group: :production
+gem 'pg'
 gem 'jquery-rails'
 
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
-
+gem 'sqlite3', group: :development
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -45,7 +45,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sqlite3', group: :development
+  
   gem 'restful_routing'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
