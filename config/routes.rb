@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   resources :sessions, except: [:destroy]
   delete '/sessions' => 'sessions#destroy', as: :logout
   resources :comments
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	root 'home#index'  
 end
